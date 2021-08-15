@@ -1,5 +1,6 @@
 sudo: required
 language: generic
+
 services:
   - docker
 
@@ -9,7 +10,7 @@ before_install:
 script:
  - docker run -e CI=true vpw123/react-test npm test 
 
-after_success
+after_success:
  - docker build -t vpw123/multi-client ./client
  - docker build -t vpw123/multi-server ./server
  - docker build -t vpw123/multi-nginx ./nginx
