@@ -16,9 +16,9 @@ after_success:
  - docker build -t vpw123/multi-nginx ./nginx
  - docker build -t vpw123/multi-worker ./worker
 #Log in docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #Push images to docker hub
-- docker push vpw123/multi-client
-- docker push vpw123/multi-server
-- docker push vpw123/multi-nginx
-- docker push vpw123/multi-worker
+ - docker push vpw123/multi-client
+ - docker push vpw123/multi-server
+ - docker push vpw123/multi-nginx
+ - docker push vpw123/multi-worker
